@@ -103,7 +103,7 @@ To make iGPU work in Ventura you need to spoof it as Kabylake iGPU.
 
 Go to `Root > DeviceProperties > Add` and create a new child here with name `PciRoot(0x0)/Pci(0x2,0x0)`, type `Dictionary`, and in it add these lines
 
-![title](pic/gpupatach.png)
+![title](pic/gpupatch.png)
 
 With these iGPU will work properly in Ventura and make HDMI work
 
