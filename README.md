@@ -9,6 +9,8 @@ Intel AC3615 WiFi + Bluetooth
 
 PS/2 Keyboard and Touchpad
 
+Conexant CX20724
+
 3 USB Ports
 
 ## Working
@@ -95,16 +97,47 @@ Put kexts in `Kexts` folder, SSDTs in `ACPI` folder and .efi files in `Drivers` 
 
 Copy config.plist file from OpenCore releases (Docs/Sample.plist) and open it in ProperTree
 
-So, we need to edit te config.plist file for Mobile Intel Skylake (6th gen), simply follow [this](https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/skylake.html)
+### ACPI
 
-As this is HP laptop, `Release USB Ownership` quirk may help during install. Don't forget about this
+ProperTree should put files automatically, so we can skip this. There should be 3 entries
 
-To make iGPU work in Ventura you need to spoof it as Kabylake iGPU.
+### Booter
 
-Go to `Root > DeviceProperties > Add` and create a new child here with name `PciRoot(0x0)/Pci(0x2,0x0)`, type `Dictionary`, and in it add these lines
+Simply skip
+
+### DeviceProperties
+
+To make iGPU work in Ventura and make HDMI work do this 
+
+Create a new child here with name `PciRoot(0x0)/Pci(0x2,0x0)` with type `Dictionary`, and inside it add these lines
 
 ![title](pic/gpupatch.png)
 
-With these iGPU will work properly in Ventura and make HDMI work
+We'll return to this section later
 
+### Kernel
+
+ProperTree should put all kexts there, but just in case move `Lilu`, `VirtualSMC` and `WhateverGreen` to top
+
+In the `Quirks` change these: 
+
+`AppleXcpmCfgLock` to True
+
+`DisableIoMapper`to True
+
+`LapicKernelPanic` to True
+
+`PanicNoKextDump` to True
+
+`PowerTimeoutKernelPanic` to True
+
+`XhciPortLimit` to False
+
+### Misc
+
+In Boot 
+
+In Debud enable `AppleDebug` and `ApplePanic` and set `Target` to 67 so it will help finding any issues during boot
+
+Also enable `DisableWatchDog`
 
