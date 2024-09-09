@@ -237,9 +237,13 @@ Disable CSM and Legacy boot
 
 Only the case with separate drives is covered there
 
-In BIOS disable the port with the drive where macOS is installed so Windows won't overwrite Opencore
+In BIOS disable the port with the drive where macOS is installed and enable it after installing Windows
 
-Or you can deploy Windows image to the second drive with DISM and create EFI partition with Windows bootloader and pick it from Opencore
+Check if each drive has an EFI partition. If not, restore Opencore from USB on macOS drive(copy-paste) and [create EFI partition on Windows drive](https://www.tenforums.com/installation-upgrade/52837-moving-recreating-efi-partition.html#post698505)
+
+Now you can boot both macOS and Windows from Opencore
+
+(Windows will consider it being installed on Macbook as shown in msinfo32)
 
 After this you need to apply one registry tweak as Windows and macOS treat time differently
 
@@ -247,7 +251,7 @@ Open `regedit.exe` and go to `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Contro
 
 ![title](pic/regedit.png)
 
-## Mac-like boot picker
+## Mac-like boot picker in Opencore
 
 Download [OcBinaryData](https://github.com/acidanthera/OcBinaryData) (Code > Download ZIP)
 
