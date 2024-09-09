@@ -13,6 +13,10 @@ Conexant CX20724
 
 3 USB Ports
 
+1 2.5 SATA port
+
+1 M.2 SATA port (not NVMe)
+
 ## Working
 WiFi
 
@@ -26,13 +30,13 @@ USB
 
 Sleep (ACPI patch required)
 
-Webcam
+Webcam (USB mapping required)
 
 Sound input and output
 
 3.5 jack
 
-HDMI (need some patch), but there's a catch
+HDMI (needs patch)
 
 Ethernet
 
@@ -231,9 +235,43 @@ Disable CSM and Legacy boot
 
 ## Windows dual-boot
 
-WIP
+Only the case with separate drives is covered there
 
-## Mac-like picker
+In BIOS disable the port with the drive where macOS is installed so Windows won't overwrite Opencore
+
+Or you can deploy Windows image to the second drive with DISM and create EFI partition with Windows bootloader and pick it from Opencore
+
+After this you need to apply one registry tweak as Windows and macOS treat time differently
+
+Open `regedit.exe` and go to `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation`, right click on the folder, create a new DWORD value `RealTimeIsUniversal` there and set it to 1
+
+![title](pic/regedit.png)
+
+## Mac-like boot picker
+
+Download [OcBinaryData](https://github.com/acidanthera/OcBinaryData) (Code > Download ZIP)
+
+Extract it and delete everything in `Audio` folder (leave `OCEFIAudio_VoiceOver_Boot.mp3` if you want to set-up boot chime)
+
+Put `OpenCanopy.efi` from Opencore release to EFI/OC/Drivers/
+
+In `config.plist` set these:
+
+Misc > Boot
+
+`PickerMode` to `External`
+
+`PickerAttributes` to `17`
+
+`PickerVariant` to either `Auto`,`Acidanthera\Syrah`,`Acidanthera\GoldenGate` or `Acidanthera\Chardonnay`
+
+UEFI > Drivers
+
+Clone last driver and rename it so it will look like this
+
+![title](pic/canopydriver.png)
+
+## Mac boot chime in Opencore
 
 WIP
 
