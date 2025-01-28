@@ -1,5 +1,8 @@
 # ProBook-440-G3-Hackintosh
-A repository about installing and fine-tuning macOS on HP ProBook 440 G3
+## EoL: Now that my laptop has died and I don't consider fixing it, the guide will not be updated and will contain everything written before 20 Jan 2025. If the time comes, I'll even create a new guide for another laptop.
+
+A guide about installing and fine-
+tuning macOS on HP ProBook 440 G3
 
 This specific laptop has:
 
