@@ -8,17 +8,17 @@ This specific laptop has:
 
 Intel Core i5-6200U 2.30 GHz with HD Graphics 520 iGPU
 
-Intel AC3615 WiFi + Bluetooth
+Intel AC3615 WiFi + Bluetooth Network Card
 
 PS/2 Keyboard and Touchpad
 
-Conexant CX20724
+Conexant CX20724 Audio Card
 
 3 USB Ports
 
-1 2.5 SATA port
+1 2.5" SATA port
 
-1 M.2 SATA port (not NVMe)
+1 M.2 SATA III port (not NVMe)
 
 ## Working
 WiFi
@@ -37,9 +37,9 @@ Webcam (USB mapping required)
 
 Sound input and output
 
-3.5 jack
+3.5 Audio Jack
 
-HDMI (needs patch)
+HDMI (needs patch, tested in Ventura only)
 
 Ethernet
 
@@ -47,17 +47,17 @@ Fn + F1-F12 shortcuts (except F4)
 
 iServices (FaceTime & iMessage)
 
-Even hardware mute and WiFi buttons
+Hardware audio mute and WiFi buttons
+
+Bluetooth
 
 ## Not working
 
 Fingerprint reader
 
-VGA? (no info)
+VGA? it should work coz VGA in Skylake+ is implemented with some workarounds
 
-Bluetooth (can be discovered and see devices but can't connect)
-
-Shutdown (WIP)
+Shutdown (~~WIP~~)
 
 # Getting started
 First, download latest OpenCore release [there](https://github.com/acidanthera/OpenCorePkg/releases/latest), and some kexts with SSDTs
@@ -281,5 +281,5 @@ Clone last driver and rename it so it will look like this
 
 ## Mac boot chime in Opencore
 
-WIP
+~~WIP~~
 
