@@ -1,5 +1,5 @@
 # ProBook-440-G3-Hackintosh
-## EoL: Now that my laptop has died and I don't consider fixing it, the guide will not be updated after 20 Jan 2025. If the time comes, I'll even create a new guide for another laptop.
+## EoL: Now that my laptop has died and I don't consider fixing it, the guide will not be updated after 31 Jan 2025. If the time comes, I'll even create a new guide for another laptop.
 
 A guide about installing and fine-
 tuning macOS on HP ProBook 440 G3
@@ -109,7 +109,7 @@ Put .kext files in `Kexts` folder, .aml files in `ACPI` folder and .efi files in
 
 # Setting up config.plist
 
-Copy config.plist file from OpenCore releases (Docs/Sample.plist) and open it in ProperTree
+Copy config.plist file from OpenCore releases (Docs/Sample.plist), open it in ProperTree and perform OC Clean Snapshot (Ctrl+Shift+R)
 
 ## ACPI
 
@@ -119,7 +119,7 @@ ProperTree should put files automatically, so we can skip this. There should be 
 
 ### Patch
 
-[SSDT-GPRW patch](https://github.com/dortania/OpenCore-Post-Install/blob/master/extra-files/GPRW-Patch.plist) may be required to fix sleep after some uptime (idk what that happens)
+[SSDT-GPRW patch](https://github.com/dortania/OpenCore-Post-Install/blob/master/extra-files/GPRW-Patch.plist) may be required to fix sleep after some uptime (idk why that happens)
 
 This should look like this (use NP++ or other text editor)
 
@@ -127,7 +127,7 @@ This should look like this (use NP++ or other text editor)
 
 ## Booter
 
-Simply skip
+Not needed, skip
 
 ## DeviceProperties
 
@@ -143,7 +143,7 @@ This will spoof Skylake iGPU as Kaby Lake iGPU to make it work in Ventura and fi
 
 ### Add
 
-ProperTree should put all kexts there, but just in case move Lilu, VirtualSMC and WhateverGreen to top
+ProperTree should put all kexts there, but just in case move Lilu, VirtualSMC and WhateverGreen to the top so they will load first
 
 ### Quirks
 
