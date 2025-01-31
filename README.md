@@ -207,7 +207,7 @@ Set these:
 
 ### Generic
 
-Run GenSMBios and generate data for `MacBookPro14,1`
+Run GenSMBios and generate data for `MacBookPro14,1` (intended for macOS 13)
 
 `Type` is copied to `SystemProductName`
 
@@ -216,6 +216,8 @@ Run GenSMBios and generate data for `MacBookPro14,1`
 `Board Serial` is copied to `MLB`
 
 `SmUUID` is copied to `SystemUUID`
+
+![title](pic/generic.png)
 
 ## UEFI
 
