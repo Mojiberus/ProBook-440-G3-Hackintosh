@@ -1,8 +1,7 @@
 # ProBook-440-G3-Hackintosh
 ## EoL: Now that my laptop has died and I don't consider fixing it, the guide will not be updated after 31 Jan 2025. If the time comes, I'll even create a new guide for another laptop.
 
-A guide about installing and fine-
-tuning macOS on HP ProBook 440 G3
+A guide about installing and fine-tuning macOS on HP ProBook 440 G3
 
 This specific laptop has:
 
@@ -16,9 +15,9 @@ Conexant CX20724 Audio Card
 
 3 USB Ports
 
-1 2.5" SATA port
+1 2.5" SATA slot
 
-1 M.2 SATA III port (not NVMe)
+1 M.2 SATA III slot (not NVMe)
 
 ## Working
 WiFi
